@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorText"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/notes_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Заметки"
+        android:textColor="@color/colorDark"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/TextList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Текст" />
+
+    <Button
+        android:id="@+id/Button_Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sum"
+        android:textSize="25dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notes_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+</LinearLayout>
