@@ -1,7 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-///Привет, Юля, Чекак
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
