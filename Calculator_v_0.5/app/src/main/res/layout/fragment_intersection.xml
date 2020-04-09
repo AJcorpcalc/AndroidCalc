@@ -52,12 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_0"
-        android:clickable="true"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="@+id/bracket_first_dot_open"
         app:layout_constraintStart_toEndOf="@+id/bracket_first_dot_open"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_first_dot_y"
@@ -69,7 +68,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_first_dot_x"
         app:layout_constraintStart_toEndOf="@+id/input_first_dot_x"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_first_dot_z"
@@ -81,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_first_dot_y"
         app:layout_constraintStart_toEndOf="@+id/input_first_dot_y"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <TextView
         android:id="@+id/bracket_first_dot_close"
@@ -116,7 +115,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/bracket_first_vector_open"
         app:layout_constraintStart_toEndOf="@+id/bracket_first_vector_open"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_first_vector_y"
@@ -128,7 +127,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_x"
         app:layout_constraintStart_toEndOf="@+id/input_first_vector_x"
         tools:text="0"
-        android:inputType="number" />
+        android:inputType="numberSigned|numberDecimal" />
 
     <EditText
         android:id="@+id/input_first_vector_z"
@@ -140,7 +139,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_y"
         app:layout_constraintStart_toEndOf="@+id/input_first_vector_y"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <TextView
         android:id="@+id/bracket_first_vector_close"
@@ -175,7 +174,6 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/first_line_title" />
-////////////////////////////////////////////////////////////////////////////
     <TextView
         android:id="@+id/second_line_title"
         android:layout_width="match_parent"
@@ -209,7 +207,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/bracket_second_dot_open"
         app:layout_constraintStart_toEndOf="@+id/bracket_second_dot_open"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_second_dot_y"
@@ -220,7 +218,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_x"
         app:layout_constraintStart_toEndOf="@+id/input_second_dot_x"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_second_dot_z"
@@ -231,7 +229,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_y"
         app:layout_constraintStart_toEndOf="@+id/input_second_dot_y"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <TextView
         android:id="@+id/bracket_second_dot_close"
@@ -265,7 +263,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/bracket_second_vector_open"
         app:layout_constraintStart_toEndOf="@+id/bracket_second_vector_open"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_second_vector_y"
@@ -276,7 +274,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_x"
         app:layout_constraintStart_toEndOf="@+id/input_second_vector_x"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <EditText
         android:id="@+id/input_second_vector_z"
@@ -287,7 +285,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_y"
         app:layout_constraintStart_toEndOf="@+id/input_second_vector_y"
         tools:text="0"
-        android:inputType="number"/>
+        android:inputType="numberSigned|numberDecimal"/>
 
     <TextView
         android:id="@+id/bracket_second_vector_close"

@@ -82,12 +82,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
         }
     }
-
     interface SelectNotesListener {
-
         void onNotesSelect(String note);
         void onNotesLongClick(String note);
-        //void onBookLongClick(Book book);
-
     }
 }

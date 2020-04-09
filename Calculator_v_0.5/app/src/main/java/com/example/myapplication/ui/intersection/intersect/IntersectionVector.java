@@ -3,7 +3,6 @@ package com.example.myapplication.ui.intersection.intersect;
 import com.example.myapplication.MathFeatures.accuracy;
 import com.example.myapplication.ui.intersection.intersect.straight.Straight;
 
-
 import java.util.ArrayList;
 
 public final class IntersectionVector  {
@@ -27,7 +26,7 @@ public final class IntersectionVector  {
         for(int i=0;i<n;i++){
             vector1.add(vfirst.get(i));
             vector2.add(vsecond.get(i));
-            vector3.add(vsecond.get(i+n)-vfirst.get(i+n)-err.error_sub(vsecond.get(i+n),vfirst.get(i+n)));
+            vector3.add(vsecond.get(i+n)-vfirst.get(i+n)-err.error_sum_sub());
         }
     }
     private boolean intersection(){
@@ -55,24 +54,30 @@ public final class IntersectionVector  {
         else if(div5!=0) t=(vector1.get(0)*vector3.get(2)/vector1.get(2)-vector3.get(0))/div5;
         else if(div6!=0)t=(vector1.get(1)*vector3.get(2)/vector1.get(2)-vector3.get(1))/div6;
         else return false;
-       //  t=vector3.get(0)/(vector2.get(0)*(vector1.get(1)-vector3.get(1))/vector2.get(1)-vector1.get(0));
-                //-err.error_div(vector3.get(0),err.error_sub(err.error_multi(vector2.get(0),err.error_div(err.error_sub(vector1.get(1),vector3.get(1)),vector2.get(1))),vector1.get(0)));
-            this.x=vector2.get(0)*t+second.getCoordination().get(0+n);
-            this.y=vector2.get(1)*t+second.getCoordination().get(1+n);
-            this.z=vector2.get(2)*t+second.getCoordination().get(2+n);
-            return true;
+
+        this.x=vector2.get(0)*t+second.getCoordination().get(0+n);
+        this.y=vector2.get(1)*t+second.getCoordination().get(1+n);
+        this.z=vector2.get(2)*t+second.getCoordination().get(2+n);
+        return true;
     }
     private boolean onOneLine()
     {
-        double constant1=vector3.get(0)*vector2.get(1),
+        double  constant1=vector3.get(0)*vector2.get(1),
                 constant2=vector3.get(1)*vector2.get(0),
                 constant3=vector3.get(2)*vector2.get(0),
                 constant4=vector3.get(0)*vector2.get(2),
                 constant5=vector3.get(1)*vector2.get(2),
-                constant6=vector3.get(2)*vector2.get(1);;
-        double error1=err.error_sub(err.error_div(vector3.get(0),vector2.get(0)),err.error_div(vector3.get(1),vector2.get(1))),
-                error2=err.error_sub(err.error_div(vector3.get(0),vector2.get(0)),err.error_div(vector3.get(2),vector2.get(2)));
-        if(Math.abs(constant1-constant2)<0.005&&Math.abs(constant4-constant3)<0.005&&Math.abs(constant6-constant5)<0.005) { return true;}
+                constant6=vector3.get(2)*vector2.get(1);
+        double error_1 = err.error_multi_div(vector3.get(0),vector2.get(1),0,0)
+                + err.error_multi_div(vector3.get(1),vector2.get(0),0,0);
+        double error_2 = err.error_multi_div(vector3.get(2),vector2.get(0),0,0)
+                +err.error_multi_div(vector3.get(0),vector2.get(2),0,0);
+        double error_3 = err.error_multi_div(vector3.get(2),vector2.get(1),0,0)
+                +err.error_multi_div(vector3.get(1),vector2.get(2),0,0);
+        if(Math.abs(constant1-constant2)<=10*error_1
+                &&Math.abs(constant4-constant3)<=10*error_2
+                &&Math.abs(constant6-constant5)<=10*error_3)
+                    { return true;}
         return false;
     }
     private boolean isParralel(){
@@ -82,24 +87,37 @@ public final class IntersectionVector  {
                 constant4=vector1.get(0)*vector2.get(2),
                 constant5=vector1.get(1)*vector2.get(2),
                 constant6=vector1.get(2)*vector2.get(1);
-        double error1=err.error_sub(err.error_div(vector1.get(0),vector2.get(0)),err.error_div(vector1.get(1),vector2.get(1)));
-              //error2=err.error_sub(err.error_div(vector1.get(0),vector2.get(0)),err.error_div(vector1.get(2),vector2.get(2)));
-
-        if(Math.abs(constant1-constant2)<0.005 &&Math.abs(constant4-constant3)<0.005 &&Math.abs(constant6-constant5)<0.005) { return true;}
+        double error_1 = err.error_multi_div(vector1.get(0),vector2.get(1),0,0)
+                + err.error_multi_div(vector1.get(1),vector2.get(0),0,0);
+        double error_2 = err.error_multi_div(vector1.get(2),vector2.get(0),0,0)
+                +err.error_multi_div(vector1.get(0),vector2.get(2),0,0);
+        double error_3 = err.error_multi_div(vector1.get(2),vector2.get(1),0,0)
+                +err.error_multi_div(vector1.get(1),vector2.get(2),0,0);
+        if(Math.abs(constant1-constant2)<=10*error_1
+                &&Math.abs(constant4-constant3)<=10*error_2
+                &&Math.abs(constant6-constant5)<=10*error_3)
+                    { return true;}
         return false;
 
     }
     private boolean location(){
         double deg= vector1.get(0)*(vector2.get(1)*vector3.get(2)-vector2.get(2)*vector3.get(1))
-                    -vector1.get(1)*(vector2.get(0)*vector3.get(2)-vector2.get(2)*vector3.get(0))
-                    +vector1.get(2)*(vector2.get(0)*vector3.get(1)-vector2.get(1)*vector3.get(0));
-        double error1=err.error_multi(vector1.get(0),err.error_sub(err.error_multi(vector2.get(1),vector3.get(2)),err.error_multi(vector2.get(2),vector3.get(1))));
-        double error2=err.error_multi(vector1.get(1),err.error_sub(err.error_multi(vector2.get(0),vector3.get(2)),err.error_multi(vector2.get(2),vector3.get(0))));
-        double error3=err.error_multi(vector1.get(2),err.error_sub(err.error_multi(vector2.get(0),vector3.get(1)),err.error_multi(vector2.get(1),vector3.get(0))));
-        double error=err.error_sub(error1,error2);
-        error=err.error_sum(error,error3);
+                -vector1.get(1)*(vector2.get(0)*vector3.get(2)-vector2.get(2)*vector3.get(0))
+                +vector1.get(2)*(vector2.get(0)*vector3.get(1)-vector2.get(1)*vector3.get(0));
+        double error_1 = err.error_multi_div(vector2.get(0),vector3.get(1),0,0)
+                + err.error_multi_div(vector2.get(1),vector3.get(0),0,0);
+        double error_2 = err.error_multi_div(vector2.get(2),vector3.get(0),0,0)
+                +err.error_multi_div(vector2.get(0),vector3.get(2),0,0);
+        double error_3 = err.error_multi_div(vector2.get(2),vector3.get(1),0,0)
+                +err.error_multi_div(vector2.get(1),vector3.get(2),0,0);
+        double error = err.error_multi_div(vector1.get(0),
+                (vector2.get(1)*vector3.get(2)-vector2.get(2)*vector3.get(1)),Math.pow(2,-53), error_3)
+                + err.error_multi_div(vector1.get(1),
+                (vector2.get(0)*vector3.get(2)-vector2.get(2)*vector3.get(0)),Math.pow(2,-53),error_2)
+                + err.error_multi_div(vector1.get(2),(vector2.get(0)*vector3.get(1)-vector2.get(1)*vector3.get(0)),
+                Math.pow(2,-53),error_1);
 
-        if(Math.abs(deg)<0.005) return true;
+        if(Math.abs(deg)<=10*error) return true;
         return false;
     }
     public String getCoordination() {
@@ -112,8 +130,8 @@ public final class IntersectionVector  {
                 return "Прямые параллельны";
             }
 
-           if( intersection())
-           return x+","+y+","+z;//err.val_round(x,5)+","+err.val_round(y,5)+","+err.val_round(z,5);
+            if( intersection())
+                return err.val_round(x,5)+","+err.val_round(y,5)+","+err.val_round(z,5);
             else return "Вводи сука нормально,знаешь блять как сложно делить на ноль нахуй";
         }
         return "Прямые скрещиваются";

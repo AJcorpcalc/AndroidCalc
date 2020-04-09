@@ -23,25 +23,12 @@ public class accuracy {
         return result;
     }
 
-    public double error_sum(double x, double y) {
-        double result = x+y;
-        return result*Math.pow(2,-53);
+    public double error_sum_sub() {
+        return Math.pow(2,-52);
     }
 
-    public double error_sub(double x, double y) {
-        double result = x-y;
-        return result*Math.pow(2,-53);
+    public double error_multi_div(double x, double y, double er1,double er2) {
+        if(er1==0&&er2==0) return Math.abs(x)*Math.pow(2,-53)+Math.abs(y)*Math.pow(2,-53);
+        else return Math.abs(x)*er2+Math.abs(y)*er1;
     }
-
-    public double error_multi(double x, double y) {
-        double result = x*y;
-        return result*Math.pow(2,-53);
-    }
-
-    public double error_div(double x, double y) {
-        double result = x/y;
-        return result*Math.pow(2,-53);
-    }
-
-
 }
