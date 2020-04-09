@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#010F0E</color>
+    <color name="colorPrimaryDark">#1963F0</color>
+    <color name="colorAccent">#570121</color>
+    <color name="colorDark">#010C0A</color>
+    <color name="colorText">#B9BEBC</color>
+    <color name="colorFunc">#FA4902</color>
+    <color name="colorConst">#13FA02</color>
+    <color name="colorRedi">#CC033B</color>
+    <color name="color_for_best_photo">#7A000000</color>
+</resources>
+
