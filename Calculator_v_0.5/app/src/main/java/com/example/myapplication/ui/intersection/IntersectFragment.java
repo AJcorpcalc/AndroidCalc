@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -56,26 +58,32 @@ public class IntersectFragment extends Fragment {
         View.OnClickListener btn0 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double f_dot_x = Double.parseDouble(first_dot_x.getText().toString());
-                double f_dot_y = Double.parseDouble(first_dot_y.getText().toString());
-                double f_dot_z = Double.parseDouble(first_dot_z.getText().toString());
+                try {
 
-                double f_vec_x = Double.parseDouble(first_vector_x.getText().toString());
-                double f_vec_y = Double.parseDouble(first_vector_y.getText().toString());
-                double f_vec_z = Double.parseDouble(first_vector_z.getText().toString());
+                    double f_dot_x = Double.parseDouble(first_dot_x.getText().toString());
+                    double f_dot_y = Double.parseDouble(first_dot_y.getText().toString());
+                    double f_dot_z = Double.parseDouble(first_dot_z.getText().toString());
 
-                double s_dot_x = Double.parseDouble(second_dot_x.getText().toString());
-                double s_dot_y = Double.parseDouble(second_dot_y.getText().toString());
-                double s_dot_z = Double.parseDouble(second_dot_z.getText().toString());
+                    double f_vec_x = Double.parseDouble(first_vector_x.getText().toString());
+                    double f_vec_y = Double.parseDouble(first_vector_y.getText().toString());
+                    double f_vec_z = Double.parseDouble(first_vector_z.getText().toString());
 
-                double s_vec_x = Double.parseDouble(second_vector_x.getText().toString());
-                double s_vec_y = Double.parseDouble(second_vector_y.getText().toString());
-                double s_vec_z = Double.parseDouble(second_vector_z.getText().toString());
-                Straight str_first = new Straight(f_vec_x, f_vec_y, f_vec_z, f_dot_x, f_dot_y, f_dot_z);
-                Straight str_second = new Straight(s_vec_x, s_vec_y, s_vec_z, s_dot_x, s_dot_y, s_dot_z);
+                    double s_dot_x = Double.parseDouble(second_dot_x.getText().toString());
+                    double s_dot_y = Double.parseDouble(second_dot_y.getText().toString());
+                    double s_dot_z = Double.parseDouble(second_dot_z.getText().toString());
 
-                intersectionText.setText(new IntersectionVector(str_first, str_second).getCoordination());
+                    double s_vec_x = Double.parseDouble(second_vector_x.getText().toString());
+                    double s_vec_y = Double.parseDouble(second_vector_y.getText().toString());
+                    double s_vec_z = Double.parseDouble(second_vector_z.getText().toString());
 
+                    Straight str_first = new Straight(f_vec_x, f_vec_y, f_vec_z, f_dot_x, f_dot_y, f_dot_z);
+                    Straight str_second = new Straight(s_vec_x, s_vec_y, s_vec_z, s_dot_x, s_dot_y, s_dot_z);
+
+                    intersectionText.setText(new IntersectionVector(str_first, str_second).getCoordination());
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getActivity(),"без чисел не будет и результата.\n Конфуций",Toast.LENGTH_SHORT).show();
+                return;
+            }
             }
         };
 
@@ -97,7 +105,6 @@ public class IntersectFragment extends Fragment {
                         case R.id.input_first_vector_x: first_vector_x.setText(""); break;
                         case R.id.input_first_vector_y: first_vector_y.setText(""); break;
                         case R.id.input_first_vector_z: first_vector_z.setText(""); break;
-
                     }
 
                     ((InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE))

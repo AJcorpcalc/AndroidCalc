@@ -31,6 +31,7 @@
         android:clickable="false"
         android:gravity="center"
         android:textColor="@color/colorText"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -95,51 +96,65 @@
 
 
     <TextView
+        android:id="@+id/first_vector_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:text="Вектор a:"
+        android:textColor="@color/colorText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/bracket_first_vector_open"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input_first_vector_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bracket_first_vector_open"
+        app:layout_constraintStart_toEndOf="@+id/bracket_first_vector_open"
+        tools:text="0" />
+
+    <EditText
+        android:id="@+id/input_first_vector_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_y"
+        app:layout_constraintStart_toEndOf="@+id/dot_point_f_yv_zv"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/dot_point_f_yv_zv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=";"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_y"
+        app:layout_constraintStart_toEndOf="@+id/input_first_vector_y"
+        tools:text=";" />
+
+    <TextView
         android:id="@+id/bracket_first_vector_open"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="("
         android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/first_vector_title"
-        app:layout_constraintStart_toEndOf="@id/first_vector_title"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toTopOf="@+id/second_line_title"
+        app:layout_constraintStart_toStartOf="@+id/first_vector_title"
         tools:text="(" />
-
-    <EditText
-        android:id="@+id/input_first_vector_x"
-        android:layout_width="wrap_content"
-        android:clickable="true"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_first_vector_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_first_vector_open"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <EditText
-        android:id="@+id/input_first_vector_y"
-        android:clickable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_x"
-        app:layout_constraintStart_toEndOf="@+id/input_first_vector_x"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal" />
-
-    <EditText
-        android:id="@+id/input_first_vector_z"
-        android:clickable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_y"
-        app:layout_constraintStart_toEndOf="@+id/input_first_vector_y"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
 
     <TextView
         android:id="@+id/bracket_first_vector_close"
@@ -147,10 +162,35 @@
         android:layout_height="wrap_content"
         android:text=")"
         android:textColor="@color/colorText"
-        android:textSize="18sp"
+        android:textSize="52sp"
         app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_z"
         app:layout_constraintStart_toEndOf="@+id/input_first_vector_z"
         tools:text=")" />
+
+    <EditText
+        android:id="@+id/input_first_vector_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_x"
+        app:layout_constraintStart_toEndOf="@+id/dot_point_f_xv_yv"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/dot_point_f_xv_yv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=";"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_x"
+        app:layout_constraintStart_toEndOf="@+id/input_first_vector_x"
+        tools:text=";" />
+
 
     <TextView
         android:id="@+id/first_dot_title"
@@ -164,16 +204,9 @@
         app:layout_constraintTop_toBottomOf="@id/first_line_title"
         />
 
-    <TextView
-        android:id="@+id/first_vector_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Вектор a:"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_line_title" />
+
+
+
     <TextView
         android:id="@+id/second_line_title"
         android:layout_width="match_parent"
@@ -181,122 +214,12 @@
         android:clickable="false"
         android:gravity="center"
         android:textColor="@color/colorText"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.45"
         tools:text="Координаты точки и направляющего вектора 2 прямой:" />
-
-    <TextView
-        android:id="@+id/bracket_second_dot_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="("
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@id/second_dot_title"
-        app:layout_constraintBottom_toBottomOf="@id/second_dot_title"
-        tools:text="(" />
-
-    <EditText
-        android:id="@+id/input_second_dot_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_second_dot_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_second_dot_open"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <EditText
-        android:id="@+id/input_second_dot_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_x"
-        app:layout_constraintStart_toEndOf="@+id/input_second_dot_x"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <EditText
-        android:id="@+id/input_second_dot_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_y"
-        app:layout_constraintStart_toEndOf="@+id/input_second_dot_y"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <TextView
-        android:id="@+id/bracket_second_dot_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=")"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_z"
-        app:layout_constraintStart_toEndOf="@+id/input_second_dot_z"
-        tools:text=")"
-        />
-
-    <TextView
-        android:id="@+id/bracket_second_vector_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="("
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/second_vector_title"
-        app:layout_constraintStart_toEndOf="@id/second_vector_title"
-        tools:text="(" />
-
-    <EditText
-        android:id="@+id/input_second_vector_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_second_vector_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_second_vector_open"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <EditText
-        android:id="@+id/input_second_vector_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_x"
-        app:layout_constraintStart_toEndOf="@+id/input_second_vector_x"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <EditText
-        android:id="@+id/input_second_vector_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_y"
-        app:layout_constraintStart_toEndOf="@+id/input_second_vector_y"
-        tools:text="0"
-        android:inputType="numberSigned|numberDecimal"/>
-
-    <TextView
-        android:id="@+id/bracket_second_vector_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=")"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_z"
-        app:layout_constraintStart_toEndOf="@+id/input_second_vector_z"
-        tools:text=")" />
 
     <TextView
         android:id="@+id/second_dot_title"
@@ -305,45 +228,214 @@
         android:layout_marginTop="20dp"
         android:text="Точка B:"
         android:textColor="@color/colorText"
-        android:textSize="18sp"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/second_line_title" />
+
+    <TextView
+        android:id="@+id/bracket_second_dot_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="("
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintStart_toStartOf="@+id/second_dot_title"
+        app:layout_constraintTop_toBottomOf="@+id/second_dot_title"
+        tools:text="(" />
+
+    <EditText
+        android:id="@+id/input_second_dot_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bracket_second_dot_open"
+        app:layout_constraintStart_toEndOf="@+id/bracket_second_dot_open"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/dot_point_s_xd_yd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=";"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_y"
+        app:layout_constraintStart_toEndOf="@+id/input_second_dot_y"
+        tools:text=";" />
+
+    <EditText
+        android:id="@+id/input_second_dot_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_yd_zd"
+        app:layout_constraintStart_toEndOf="@+id/dot_point_s_yd_zd"
+        tools:text="0" />
+
+
+
+
+    <TextView
+        android:id="@+id/dot_point_s_yd_zd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=";"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_x"
+        app:layout_constraintStart_toEndOf="@+id/input_second_dot_x"
+        tools:text=";" />
+
+    <EditText
+        android:id="@+id/input_second_dot_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_xd_yd"
+        app:layout_constraintStart_toEndOf="@+id/dot_point_s_xd_yd"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/bracket_second_dot_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=")"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_z"
+        app:layout_constraintStart_toEndOf="@+id/input_second_dot_z"
+        tools:text=")" />
+
+    <TextView
+        android:id="@+id/bracket_second_vector_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="("
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toTopOf="@+id/result_title"
+        app:layout_constraintStart_toStartOf="@+id/second_vector_title"
+        tools:text="(" />
+
+    <EditText
+        android:id="@+id/input_second_vector_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bracket_second_vector_open"
+        app:layout_constraintStart_toEndOf="@+id/bracket_second_vector_open"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/dot_point_s_xv_yv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=";"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_y"
+        app:layout_constraintStart_toEndOf="@+id/input_second_vector_y"
+        tools:text=";" />
+
+    <EditText
+        android:id="@+id/input_second_vector_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_yv_zv"
+        app:layout_constraintStart_toEndOf="@+id/dot_point_s_yv_zv"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/dot_point_s_yv_zv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=";"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_x"
+        app:layout_constraintStart_toEndOf="@+id/input_second_vector_x"
+        tools:text=";" />
+
+    <EditText
+        android:id="@+id/input_second_vector_z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="numberSigned|numberDecimal"
+        android:text="@string/_0"
+        android:textColor="@color/colorText"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_xv_yv"
+        app:layout_constraintStart_toEndOf="@+id/dot_point_s_xv_yv"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/bracket_second_vector_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=")"
+        android:textColor="@color/colorText"
+        android:textSize="52sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_z"
+        app:layout_constraintStart_toEndOf="@+id/input_second_vector_z"
+        tools:text=")" />
+
 
     <TextView
         android:id="@+id/second_vector_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:text="Вектор b:"
         android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/second_line_title" />
-
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/bracket_second_vector_open"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/result_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:clickable="false"
         android:gravity="center"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Intersection_result_textview"
         tools:text="Результат:" />
-
 
 
     <TextView
         android:id="@+id/Intersection_result_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Координаты точки равно (x,y,z)"
+        android:layout_marginBottom="5dp"
+        android:text="Координаты точки равны (x,y,z)"
         android:textColor="@color/colorText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result_title"
-        app:layout_constraintVertical_bias="0.1"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/Button_intersection_result"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
