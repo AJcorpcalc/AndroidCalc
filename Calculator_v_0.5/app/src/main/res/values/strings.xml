@@ -45,11 +45,10 @@
     <string name="calculator">Calculator</string>
     <string name="menu_graph">Graph</string>
     <string name="menu_about">About</string>
-    <string name="formula">formula</string>
     <string name="List">Список формул</string>
     <string name="List_for_save">list</string>
     <string name="MyPref">myPref</string>
-    <string name="notes">notes</string>
+    <string name="Notes">Notes</string>
     <string name="welcome_text">Welcome to our maths app</string>
 
     <string-array name="List1">
