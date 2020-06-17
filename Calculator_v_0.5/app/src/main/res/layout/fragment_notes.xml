@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorText"
+    android:background="@color/colorGray"
     android:orientation="vertical">
 
     <TextView
@@ -20,21 +20,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="Текст"
-        android:focusable="auto"/>
+        android:focusable="auto"
+        android:text="Текст" />
 
     <Button
         android:id="@+id/Button_Add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sum"
-        android:textSize="25dp"/>
+        android:textSize="25dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 
 
 </LinearLayout>

@@ -22,7 +22,7 @@
         android:background="@color/color_for_best_photo"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:itemTextColor="#CB978D8D"
+        app:itemTextColor="#E9C8C8C8"
         app:menu="@menu/activity_main_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

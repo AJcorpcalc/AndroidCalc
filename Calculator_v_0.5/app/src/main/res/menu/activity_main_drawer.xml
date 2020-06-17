@@ -7,26 +7,27 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_calc"
-            android:icon="@drawable/icon_our_calc"
+            android:icon="@drawable/calc_icon"
             android:title="@string/calculator"
              />
         <item
             android:id="@+id/nav_intersection"
-            android:icon="@drawable/icon_our_graph"
+            android:icon="@drawable/intersection_icon"
             android:title="@string/menu_intersection"
             />
         <item
             android:id="@+id/nav_graph"
-            android:icon="@drawable/icon_our_graph"
+            android:icon="@drawable/graph_icon"
             android:title="@string/menu_graph" />
         <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/icon_our_about"
-            android:title="@string/menu_about" />
-        <item
             android:id="@+id/nav_notes"
-            android:icon="@drawable/icon_our_graph"
-            android:title="@string/formula"/>
+            android:icon="@drawable/notes_icon"
+            android:title="@string/notes"/>
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about_icon"
+            android:title="@string/menu_about" />
+
 
     </group>
 

@@ -11,11 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="false"
+        android:gravity="center_horizontal"
         android:text="Проверка на пересечение двух прямых"
         android:textAlignment="center"
         android:textColor="@color/colorText"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -32,6 +34,7 @@
         android:gravity="center"
         android:textColor="@color/colorText"
         android:textSize="18dp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -128,6 +131,7 @@
         android:text="Вектор a:"
         android:textColor="@color/colorText"
         android:textSize="16sp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintBottom_toTopOf="@+id/bracket_first_vector_open"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
@@ -174,11 +178,11 @@
         android:id="@+id/bracket_first_vector_open"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:text="("
         android:textColor="@color/colorText"
         android:textSize="52sp"
         app:layout_constraintBottom_toTopOf="@+id/second_line_title"
-        android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="@+id/first_vector_title"
         tools:text="(" />
 
@@ -226,12 +230,11 @@
         android:text="Точка A:"
         android:textColor="@color/colorText"
         android:textSize="16sp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/first_line_title" />
-
-
 
 
     <TextView
@@ -242,6 +245,7 @@
         android:gravity="center"
         android:textColor="@color/colorText"
         android:textSize="18dp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -256,6 +260,7 @@
         android:text="Точка B:"
         android:textColor="@color/colorText"
         android:textSize="16sp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
@@ -308,8 +313,6 @@
         tools:text="0" />
 
 
-
-
     <TextView
         android:id="@+id/dot_point_s_yd_zd"
         android:layout_width="wrap_content"
@@ -349,11 +352,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_marginBottom="5dp"
         android:text="("
         android:textColor="@color/colorText"
         android:textSize="52sp"
         app:layout_constraintBottom_toTopOf="@+id/result_title"
-        android:layout_marginBottom="5dp"
         app:layout_constraintStart_toStartOf="@+id/second_vector_title"
         tools:text="(" />
 
@@ -437,6 +440,7 @@
         android:text="Вектор b:"
         android:textColor="@color/colorText"
         android:textSize="16sp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintBottom_toTopOf="@+id/bracket_second_vector_open"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.12"
@@ -451,6 +455,7 @@
         android:gravity="center"
         android:textColor="@color/colorText"
         android:textSize="18sp"
+        android:autoSizeMinTextSize="4sp"
         app:layout_constraintBottom_toTopOf="@+id/Intersection_result_textview"
         tools:text="Результат:" />
 

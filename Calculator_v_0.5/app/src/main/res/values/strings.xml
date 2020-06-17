@@ -49,6 +49,8 @@
     <string name="List">Список формул</string>
     <string name="List_for_save">list</string>
     <string name="MyPref">myPref</string>
+    <string name="notes">notes</string>
+    <string name="welcome_text">Welcome to our maths app</string>
 
     <string-array name="List1">
         <item>Производные</item>
