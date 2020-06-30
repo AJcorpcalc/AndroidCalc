@@ -50,6 +50,11 @@
     <string name="MyPref">myPref</string>
     <string name="Notes">Notes</string>
     <string name="welcome_text">Welcome to our maths app</string>
+    <string name="variableX">X</string>
+    <string name="graphClear">Очистить</string>
+    <string name="graphDraw">Нарисовать</string>
+    <string name="graphInputTitle">Введите формулу:</string>
+    <string name="GraphTitle">Построение Графиков</string>
 
     <string-array name="List1">
         <item>Производные</item>

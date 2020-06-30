@@ -43,14 +43,15 @@ public class CalculatorFragment extends Fragment {
                         if (lastCommand != ")") {
                             start = true;
                             lastCommand = "";
-                            lastNumber="0";
+
+                            lastNumber+="0";
                             calcText.setText(calcText.getText() + "0");
                         }
                         break;
                     case R.id.B1:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "1");
                         }
@@ -58,7 +59,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B2:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "2");
                         }
@@ -66,7 +67,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B3:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "3");
                         }
@@ -74,7 +75,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B4:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "4");
                         }
@@ -82,7 +83,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B5:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "5");
                         }
@@ -90,7 +91,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B6:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "6");
                         }
@@ -98,7 +99,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B7:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "7");
                         }
@@ -106,7 +107,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B8:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "8");
                         }
@@ -114,7 +115,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B9:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber="0";
+                            lastNumber+="0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "9");
                         }
@@ -124,7 +125,7 @@ public class CalculatorFragment extends Fragment {
                             start = true;
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "p");
-                            lastNumber="p";
+                            lastNumber+="p";
                         }
                         break;
                     case R.id.BMinus:

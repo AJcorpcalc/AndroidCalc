@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_intersection, R.id.nav_graph, R.id.nav_about, R.id.nav_calc, R.id.nav_notes)
