@@ -55,6 +55,7 @@
     <string name="graphDraw">Нарисовать</string>
     <string name="graphInputTitle">Введите формулу:</string>
     <string name="GraphTitle">Построение Графиков</string>
+    <string name="aboutTitle">О приложении</string>
 
     <string-array name="List1">
         <item>Производные</item>
