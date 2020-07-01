@@ -32,7 +32,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     @Override
     public NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notes_item_view, parent, false);
-        return new NotesViewHolder(view,selectNotesListener);
+        return new NotesViewHolder(view, selectNotesListener);
     }
 
     @Override
@@ -58,7 +58,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     class NotesViewHolder extends RecyclerView.ViewHolder {
         private TextView nameTextView;
         private final SelectNotesListener selectNotesListener;
-        public NotesViewHolder(View itemView,SelectNotesListener selectNotesListener) {
+
+        public NotesViewHolder(View itemView, SelectNotesListener selectNotesListener) {
             super(itemView);
             this.selectNotesListener = selectNotesListener;
             nameTextView = itemView.findViewById(R.id.notes_list_item);
@@ -82,8 +83,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
         }
     }
+
     interface SelectNotesListener {
         void onNotesSelect(String note);
+
         void onNotesLongClick(String note);
     }
 }

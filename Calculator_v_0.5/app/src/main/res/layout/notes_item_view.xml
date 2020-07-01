@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
+    android:background="@drawable/fields"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:background="@drawable/fields"
-    >
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp">
 
     <TextView
         android:id="@+id/notes_list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
+        android:fontFamily="sans-serif-medium"
         android:hint="/*Тут пусто*/"
         android:text="Example"
         android:textSize="14sp"
         android:typeface="normal"
-        android:fontFamily="sans-serif-medium"
         tools:targetApi="jelly_bean" />
 
 </LinearLayout>

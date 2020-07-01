@@ -1,485 +1,411 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDark">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/intersection_title"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:gravity="center_horizontal"
-        android:text="Проверка на пересечение двух прямых"
-        android:textAlignment="center"
-        android:textColor="@color/colorText"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
-        tools:text="Проверка на пересечение двух прямых" />
-
-    <TextView
-        android:id="@+id/first_line_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:gravity="center"
-        android:textColor="@color/colorText"
-        android:textSize="18dp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        tools:text="Координаты точки и направляющего вектора 1 прямой:" />
-
-    <TextView
-        android:id="@+id/bracket_first_dot_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="("
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintStart_toStartOf="@+id/first_dot_title"
-        app:layout_constraintTop_toBottomOf="@+id/first_dot_title"
-        tools:text="(" />
-
-    <EditText
-        android:id="@+id/input_first_dot_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_first_dot_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_first_dot_open"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_f_xd_yd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_dot_x"
-        app:layout_constraintStart_toEndOf="@+id/input_first_dot_x"
-        tools:text=";" />
-
-    <EditText
-        android:id="@+id/input_first_dot_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_point_f_xd_yd"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_f_xd_yd"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_f_yd_zd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_dot_y"
-        app:layout_constraintStart_toEndOf="@+id/input_first_dot_y"
-        tools:text=";" />
-
-    <EditText
-        android:id="@+id/input_first_dot_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36dp"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_point_f_yd_zd"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_f_yd_zd"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/bracket_first_dot_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=")"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_dot_z"
-        app:layout_constraintStart_toEndOf="@+id/input_first_dot_z"
-        tools:text=")" />
-
-
-    <TextView
-        android:id="@+id/first_vector_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Вектор a:"
-        android:textColor="@color/colorText"
-        android:textSize="16sp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintBottom_toTopOf="@+id/bracket_first_vector_open"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/input_first_vector_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_first_vector_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_first_vector_open"
-        tools:text="0" />
-
-    <EditText
-        android:id="@+id/input_first_vector_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_y"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_f_yv_zv"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_f_yv_zv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_y"
-        app:layout_constraintStart_toEndOf="@+id/input_first_vector_y"
-        tools:text=";" />
-
-    <TextView
-        android:id="@+id/bracket_first_vector_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="("
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toTopOf="@+id/second_line_title"
-        app:layout_constraintStart_toStartOf="@+id/first_vector_title"
-        tools:text="(" />
-
-    <TextView
-        android:id="@+id/bracket_first_vector_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=")"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_z"
-        app:layout_constraintStart_toEndOf="@+id/input_first_vector_z"
-        tools:text=")" />
-
-    <EditText
-        android:id="@+id/input_first_vector_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_x"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_f_xv_yv"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_f_xv_yv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_first_vector_x"
-        app:layout_constraintStart_toEndOf="@+id/input_first_vector_x"
-        tools:text=";" />
-
-
-    <TextView
-        android:id="@+id/first_dot_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Точка A:"
-        android:textColor="@color/colorText"
-        android:textSize="16sp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_line_title" />
-
-
-    <TextView
-        android:id="@+id/second_line_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:gravity="center"
-        android:textColor="@color/colorText"
-        android:textSize="18dp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49"
-        tools:text="Координаты точки и направляющего вектора 2 прямой:" />
-
-    <TextView
-        android:id="@+id/second_dot_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Точка B:"
-        android:textColor="@color/colorText"
-        android:textSize="16sp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/second_line_title" />
-
-    <TextView
-        android:id="@+id/bracket_second_dot_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="("
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintStart_toStartOf="@+id/second_dot_title"
-        app:layout_constraintTop_toBottomOf="@+id/second_dot_title"
-        tools:text="(" />
-
-    <EditText
-        android:id="@+id/input_second_dot_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_second_dot_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_second_dot_open"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_s_xd_yd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_y"
-        app:layout_constraintStart_toEndOf="@+id/input_second_dot_y"
-        tools:text=";" />
-
-    <EditText
-        android:id="@+id/input_second_dot_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_yd_zd"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_s_yd_zd"
-        tools:text="0" />
-
-
-    <TextView
-        android:id="@+id/dot_point_s_yd_zd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_x"
-        app:layout_constraintStart_toEndOf="@+id/input_second_dot_x"
-        tools:text=";" />
-
-    <EditText
-        android:id="@+id/input_second_dot_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_xd_yd"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_s_xd_yd"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/bracket_second_dot_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=")"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_dot_z"
-        app:layout_constraintStart_toEndOf="@+id/input_second_dot_z"
-        tools:text=")" />
-
-    <TextView
-        android:id="@+id/bracket_second_vector_open"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginBottom="5dp"
-        android:text="("
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toTopOf="@+id/result_title"
-        app:layout_constraintStart_toStartOf="@+id/second_vector_title"
-        tools:text="(" />
-
-    <EditText
-        android:id="@+id/input_second_vector_x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bracket_second_vector_open"
-        app:layout_constraintStart_toEndOf="@+id/bracket_second_vector_open"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_s_xv_yv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_y"
-        app:layout_constraintStart_toEndOf="@+id/input_second_vector_y"
-        tools:text=";" />
-
-    <EditText
-        android:id="@+id/input_second_vector_y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_yv_zv"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_s_yv_zv"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/dot_point_s_yv_zv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=";"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_x"
-        app:layout_constraintStart_toEndOf="@+id/input_second_vector_x"
-        tools:text=";" />
-
-    <EditText
-        android:id="@+id/input_second_vector_z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:inputType="numberSigned|numberDecimal"
-        android:text="@string/_0"
-        android:textColor="@color/colorText"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dot_point_s_xv_yv"
-        app:layout_constraintStart_toEndOf="@+id/dot_point_s_xv_yv"
-        tools:text="0" />
-
-    <TextView
-        android:id="@+id/bracket_second_vector_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=")"
-        android:textColor="@color/colorText"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toBottomOf="@+id/input_second_vector_z"
-        app:layout_constraintStart_toEndOf="@+id/input_second_vector_z"
-        tools:text=")" />
-
-
-    <TextView
-        android:id="@+id/second_vector_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Вектор b:"
-        android:textColor="@color/colorText"
-        android:textSize="16sp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintBottom_toTopOf="@+id/bracket_second_vector_open"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/result_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:clickable="false"
-        android:gravity="center"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        android:autoSizeMinTextSize="4sp"
-        app:layout_constraintBottom_toTopOf="@+id/Intersection_result_textview"
-        tools:text="Результат:" />
-
-
-    <TextView
-        android:id="@+id/Intersection_result_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="Координаты точки равны (x,y,z)"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/Button_intersection_result"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/Button_intersection_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorDark"
-        android:text="Рассчитать"
-        android:textColor="@color/colorFunc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="142dp" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/intersection_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeMinTextSize="4sp"
+            android:gravity="center_horizontal"
+            android:text="Проверка на пересечение двух прямых"
+            android:textAlignment="center"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Проверка на пересечение двух прямых" />
+
+        <TextView
+            android:id="@+id/first_line_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoSizeMinTextSize="4sp"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            tools:text="Координаты точки и направляющего вектора 1 прямой:" />
+
+        <TextView
+            android:id="@+id/first_dot_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Точка A:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bracket_first_dot_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="("
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text="(" />
+
+            <EditText
+                android:id="@+id/input_first_dot_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36dp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/dot_point_f_xd_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_first_dot_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36dp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/dot_point_f_yd_zd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_first_dot_z"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36dp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/bracket_first_dot_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=")"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=")" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/first_vector_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вектор a:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bracket_first_vector_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="("
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text="(" />
+
+            <EditText
+                android:id="@+id/input_first_vector_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/dot_point_f_xv_yv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+
+            <EditText
+                android:id="@+id/input_first_vector_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+
+            <TextView
+                android:id="@+id/dot_point_f_yv_zv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_first_vector_z"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+
+            <TextView
+                android:id="@+id/bracket_first_vector_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=")"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=")" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/second_line_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="20dp"
+            tools:text="Координаты точки и направляющего вектора 2 прямой:" />
+
+        <TextView
+            android:id="@+id/second_dot_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Точка B:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bracket_second_dot_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="("
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text="(" />
+
+            <EditText
+                android:id="@+id/input_second_dot_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/dot_point_s_xd_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_second_dot_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+
+            <TextView
+                android:id="@+id/dot_point_s_yd_zd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_second_dot_z"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/bracket_second_dot_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=")"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=")" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/second_vector_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вектор b:"
+            android:textColor="@color/colorText"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bracket_second_vector_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="("
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text="(" />
+
+            <EditText
+                android:id="@+id/input_second_vector_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/dot_point_s_xv_yv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_second_vector_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/dot_point_s_yv_zv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=";"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=";" />
+
+            <EditText
+                android:id="@+id/input_second_vector_z"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberSigned|numberDecimal"
+                android:text="@string/_0"
+                android:textColor="@color/colorText"
+                android:textSize="36sp"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/bracket_second_vector_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=")"
+                android:textColor="@color/colorText"
+                android:textSize="52sp"
+                tools:text=")" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/result_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="20sp"
+            tools:text="Результат:" />
+
+
+        <TextView
+            android:id="@+id/Intersection_result_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Координаты точки равны (x,y,z)"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/Button_intersection_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorDark"
+            android:text="Рассчитать"
+            android:textColor="@color/colorFunc" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+

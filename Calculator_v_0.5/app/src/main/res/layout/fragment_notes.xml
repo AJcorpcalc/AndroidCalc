@@ -14,7 +14,7 @@
         android:text="Заметки"
         android:textColor="@color/colorDark"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/TextList"
@@ -28,9 +28,9 @@
         android:id="@+id/Button_Add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/fields"
         android:text="@string/sum"
-        android:textSize="25dp"
-        android:background="@drawable/fields" />
+        android:textSize="25dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notes_recycler_view"

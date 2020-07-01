@@ -16,20 +16,20 @@ import com.example.myapplication.R;
 import com.example.myapplication.ui.calculator.parser.ParserCalc;
 
 public class CalculatorFragment extends Fragment {
-    private ParserCalc parser=new ParserCalc();
-    private static int i=0;
-    private static boolean start=false;
+    private ParserCalc parser = new ParserCalc();
+    private static int i = 0;
+    private static boolean start = false;
     private static TextView calcText;
-    private static String lastNumber="", lastCommand="";
+    private static String lastNumber = "", lastCommand = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_calculator, container, false);
-        calcText=(TextView) root.findViewById(R.id.text);
+        calcText = (TextView) root.findViewById(R.id.text);
 
 
-               View.OnClickListener btn0= new View.OnClickListener() {
+        View.OnClickListener btn0 = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!start) {
@@ -44,14 +44,14 @@ public class CalculatorFragment extends Fragment {
                             start = true;
                             lastCommand = "";
 
-                            lastNumber+="0";
+                            lastNumber += "0";
                             calcText.setText(calcText.getText() + "0");
                         }
                         break;
                     case R.id.B1:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "1");
                         }
@@ -59,7 +59,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B2:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "2");
                         }
@@ -67,7 +67,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B3:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "3");
                         }
@@ -75,7 +75,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B4:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "4");
                         }
@@ -83,7 +83,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B5:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "5");
                         }
@@ -91,7 +91,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B6:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "6");
                         }
@@ -99,7 +99,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B7:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "7");
                         }
@@ -107,7 +107,7 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B8:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "8");
                         }
@@ -115,17 +115,17 @@ public class CalculatorFragment extends Fragment {
                     case R.id.B9:
                         if (lastCommand != ")") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "9");
                         }
                         break;
                     case R.id.BPi:
-                        if (lastCommand != ")"&&lastNumber=="") {
+                        if (lastCommand != ")" && lastNumber == "") {
                             start = true;
                             lastCommand = "";
                             calcText.setText(calcText.getText() + "p");
-                            lastNumber+="p";
+                            lastNumber += "p";
                         }
                         break;
                     case R.id.BMinus:
@@ -158,7 +158,7 @@ public class CalculatorFragment extends Fragment {
                         }
                         break;
                     case R.id.BPoint:
-                        if (!lastNumber.contains(".")&&lastNumber!="pi" && start && lastCommand == "") {
+                        if (!lastNumber.contains(".") && lastNumber != "pi" && start && lastCommand == "") {
                             calcText.setText(calcText.getText() + ".");
                             lastNumber += ".";
                             lastCommand = ".";
@@ -191,17 +191,19 @@ public class CalculatorFragment extends Fragment {
                         start = false;
                         lastNumber = "";
                         lastCommand = "";
-                    }break;
+                    }
+                    break;
                     case R.id.BEqual:
-                        if(i==0&&(lastCommand==""||lastCommand==")")){
+                        if (i == 0 && (lastCommand == "" || lastCommand == ")")) {
                             calcText.setText(parser.start(calcText.getText().toString()));
                             i = 0;
                             start = false;
                             lastNumber = "";
                             lastCommand = "";
-                        }
-                        else if(i!=0) Toast.makeText(getActivity(),"Количество скобок не совпадает",Toast.LENGTH_SHORT).show();
-                        else Toast.makeText(getActivity(),"Введите выражение",Toast.LENGTH_SHORT).show();
+                        } else if (i != 0)
+                            Toast.makeText(getActivity(), "Количество скобок не совпадает", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(getActivity(), "Введите выражение", Toast.LENGTH_SHORT).show();
 
                         break;
                     case R.id.BSin: {
@@ -265,53 +267,53 @@ public class CalculatorFragment extends Fragment {
             }
         };
 
-            root.findViewById(R.id.B0).setOnClickListener(btn0);
-            root.findViewById(R.id.B1).setOnClickListener(btn0);
-            root.findViewById(R.id.B2).setOnClickListener(btn0);
-            root.findViewById(R.id.B3).setOnClickListener(btn0);
-            root.findViewById(R.id.B4).setOnClickListener(btn0);
-            root.findViewById(R.id.B5).setOnClickListener(btn0);
-            root.findViewById(R.id.B6).setOnClickListener(btn0);
-            root.findViewById(R.id.B7).setOnClickListener(btn0);
-            root.findViewById(R.id.B8).setOnClickListener(btn0);
-            root.findViewById(R.id.B9).setOnClickListener(btn0);
-            root.findViewById(R.id.BBracketClose).setOnClickListener(btn0);
-            root.findViewById(R.id.BBracketOpen).setOnClickListener(btn0);
-            root.findViewById(R.id.BC).setOnClickListener(btn0);
-            root.findViewById(R.id.BDivision).setOnClickListener(btn0);
-            root.findViewById(R.id.BEqual).setOnClickListener(btn0);
-            root.findViewById(R.id.BMinus).setOnClickListener(btn0);
-            root.findViewById(R.id.BMulti).setOnClickListener(btn0);
-            root.findViewById(R.id.BSum).setOnClickListener(btn0);
-            root.findViewById(R.id.BPoint).setOnClickListener(btn0);
-            root.findViewById(R.id.BPow).setOnClickListener(btn0);
-            root.findViewById(R.id.BPi).setOnClickListener(btn0);
-            root.findViewById(R.id.BSin).setOnClickListener(btn0);
-            root.findViewById(R.id.BCos).setOnClickListener(btn0);
-            root.findViewById(R.id.BTan).setOnClickListener(btn0);
-            root.findViewById(R.id.BExp).setOnClickListener(btn0);
-            root.findViewById(R.id.BLn).setOnClickListener(btn0);
+        root.findViewById(R.id.B0).setOnClickListener(btn0);
+        root.findViewById(R.id.B1).setOnClickListener(btn0);
+        root.findViewById(R.id.B2).setOnClickListener(btn0);
+        root.findViewById(R.id.B3).setOnClickListener(btn0);
+        root.findViewById(R.id.B4).setOnClickListener(btn0);
+        root.findViewById(R.id.B5).setOnClickListener(btn0);
+        root.findViewById(R.id.B6).setOnClickListener(btn0);
+        root.findViewById(R.id.B7).setOnClickListener(btn0);
+        root.findViewById(R.id.B8).setOnClickListener(btn0);
+        root.findViewById(R.id.B9).setOnClickListener(btn0);
+        root.findViewById(R.id.BBracketClose).setOnClickListener(btn0);
+        root.findViewById(R.id.BBracketOpen).setOnClickListener(btn0);
+        root.findViewById(R.id.BC).setOnClickListener(btn0);
+        root.findViewById(R.id.BDivision).setOnClickListener(btn0);
+        root.findViewById(R.id.BEqual).setOnClickListener(btn0);
+        root.findViewById(R.id.BMinus).setOnClickListener(btn0);
+        root.findViewById(R.id.BMulti).setOnClickListener(btn0);
+        root.findViewById(R.id.BSum).setOnClickListener(btn0);
+        root.findViewById(R.id.BPoint).setOnClickListener(btn0);
+        root.findViewById(R.id.BPow).setOnClickListener(btn0);
+        root.findViewById(R.id.BPi).setOnClickListener(btn0);
+        root.findViewById(R.id.BSin).setOnClickListener(btn0);
+        root.findViewById(R.id.BCos).setOnClickListener(btn0);
+        root.findViewById(R.id.BTan).setOnClickListener(btn0);
+        root.findViewById(R.id.BExp).setOnClickListener(btn0);
+        root.findViewById(R.id.BLn).setOnClickListener(btn0);
 
         return root;
     }
 
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser)
-    {
+    public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser)
-        {
+        if (isVisibleToUser) {
             Activity root = getActivity();
-            if (root != null) root.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
+            if (root != null)
+                root.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
         }
     }
-  public void onSaveInstanceState(Bundle out){
-        super.onSaveInstanceState(out);
-        out.putString("text",calcText.getText().toString());
-  }
 
-  public void onActivityCreated(Bundle save){
+    public void onSaveInstanceState(Bundle out) {
+        super.onSaveInstanceState(out);
+        out.putString("text", calcText.getText().toString());
+    }
+
+    public void onActivityCreated(Bundle save) {
         super.onActivityCreated(save);
-        if(save!=null) calcText.setText(save.getString("text"));
-  }
+        if (save != null) calcText.setText(save.getString("text"));
+    }
 }

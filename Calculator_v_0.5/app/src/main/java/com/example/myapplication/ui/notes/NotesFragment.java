@@ -28,30 +28,33 @@ public class NotesFragment extends Fragment {
 
     private RecyclerView notesRecyclerView;
     private NotesAdapter notes_Adapter;
-    private List<String> notes=new ArrayList<>();
+    private List<String> notes = new ArrayList<>();
 
-    private void save(String name){
-        SharedPreferences pref= getContext().getSharedPreferences(getString(R.string.MyPref),MODE_PRIVATE);
-        SharedPreferences.Editor editor=pref.edit();
-        StringBuilder sb=new StringBuilder();
-        for(String s:notes) sb.append(s).append("<s>");
-        if(notes.size()>0) sb.delete(sb.length()-3,sb.length());
-        editor.putString(name,sb.toString()).apply();
+    private void save(String name) {
+        SharedPreferences pref = getContext().getSharedPreferences(getString(R.string.MyPref), MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        StringBuilder sb = new StringBuilder();
+        for (String s : notes) sb.append(s).append("<s>");
+        if (notes.size() > 0) sb.delete(sb.length() - 3, sb.length());
+        editor.putString(name, sb.toString()).apply();
     }
-    private void load(String name){
-        SharedPreferences pref= getContext().getSharedPreferences(getString(R.string.MyPref),MODE_PRIVATE);
-        String[] st=pref.getString(name,"").split("<s>");
+
+    private void load(String name) {
+        SharedPreferences pref = getContext().getSharedPreferences(getString(R.string.MyPref), MODE_PRIVATE);
+        String[] st = pref.getString(name, "").split("<s>");
         notes.addAll(Arrays.asList(st));
     }
+
     @Override
     public void onStop() {
-        if(notes.size()>0)save(getString(R.string.List_for_save));
+        if (notes.size() > 0) save(getString(R.string.List_for_save));
         super.onStop();
     }
 
-    private void delete(String note){
+    private void delete(String note) {
         notes.remove(note);
     }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -88,13 +91,13 @@ public class NotesFragment extends Fragment {
                 notes_Adapter.setItems(notes);
             }
         };
-        TextView.OnFocusChangeListener btnText= new TextView.OnFocusChangeListener() {
+        TextView.OnFocusChangeListener btnText = new TextView.OnFocusChangeListener() {
 
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus==true){
-                 textView.setText("");
-                    ((InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE))
+                if (hasFocus == true) {
+                    textView.setText("");
+                    ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE))
                             .showSoftInput(v, InputMethodManager.SHOW_FORCED);
                 }
 

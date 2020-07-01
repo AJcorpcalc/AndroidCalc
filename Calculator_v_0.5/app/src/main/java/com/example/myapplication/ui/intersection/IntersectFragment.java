@@ -81,33 +81,57 @@ public class IntersectFragment extends Fragment {
 
                     intersectionText.setText(new IntersectionVector(str_first, str_second).getCoordination());
                 } catch (NumberFormatException e) {
-                    Toast.makeText(getActivity(),"без чисел не будет и результата.\n Конфуций",Toast.LENGTH_SHORT).show();
-                return;
-            }
+                    Toast.makeText(getActivity(), "без чисел не будет и результата.\n Конфуций", Toast.LENGTH_SHORT).show();
+                    return;
+                }
             }
         };
 
-        TextView.OnFocusChangeListener btnText= new TextView.OnFocusChangeListener() {
+        TextView.OnFocusChangeListener btnText = new TextView.OnFocusChangeListener() {
 
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus==true){
-                    switch(v.getId()){
-                        case R.id.input_first_dot_x: first_dot_x.setText(""); break;
-                        case R.id.input_first_dot_y: first_dot_y.setText(""); break;
-                        case R.id.input_first_dot_z: first_dot_z.setText(""); break;
-                        case R.id.input_second_dot_x: second_dot_x.setText(""); break;
-                        case R.id.input_second_dot_y: second_dot_y.setText(""); break;
-                        case R.id.input_second_dot_z: second_dot_z.setText(""); break;
-                        case R.id.input_second_vector_x: second_vector_x.setText(""); break;
-                        case R.id.input_second_vector_y: second_vector_y.setText(""); break;
-                        case R.id.input_second_vector_z: second_vector_z.setText(""); break;
-                        case R.id.input_first_vector_x: first_vector_x.setText(""); break;
-                        case R.id.input_first_vector_y: first_vector_y.setText(""); break;
-                        case R.id.input_first_vector_z: first_vector_z.setText(""); break;
+                if (hasFocus == true) {
+                    switch (v.getId()) {
+                        case R.id.input_first_dot_x:
+                            first_dot_x.setText("");
+                            break;
+                        case R.id.input_first_dot_y:
+                            first_dot_y.setText("");
+                            break;
+                        case R.id.input_first_dot_z:
+                            first_dot_z.setText("");
+                            break;
+                        case R.id.input_second_dot_x:
+                            second_dot_x.setText("");
+                            break;
+                        case R.id.input_second_dot_y:
+                            second_dot_y.setText("");
+                            break;
+                        case R.id.input_second_dot_z:
+                            second_dot_z.setText("");
+                            break;
+                        case R.id.input_second_vector_x:
+                            second_vector_x.setText("");
+                            break;
+                        case R.id.input_second_vector_y:
+                            second_vector_y.setText("");
+                            break;
+                        case R.id.input_second_vector_z:
+                            second_vector_z.setText("");
+                            break;
+                        case R.id.input_first_vector_x:
+                            first_vector_x.setText("");
+                            break;
+                        case R.id.input_first_vector_y:
+                            first_vector_y.setText("");
+                            break;
+                        case R.id.input_first_vector_z:
+                            first_vector_z.setText("");
+                            break;
                     }
 
-                    ((InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE))
+                    ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE))
                             .showSoftInput(v, InputMethodManager.SHOW_FORCED);
                 }
 

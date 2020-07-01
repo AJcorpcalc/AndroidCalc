@@ -27,11 +27,11 @@ public class AboutFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_about, container, false);
-        about=(TextView) root.findViewById(R.id.aboutText);
+        about = (TextView) root.findViewById(R.id.aboutText);
         setAbout();
 
-        EmailSubject=(EditText) root.findViewById(R.id.aboutEmailSubject);
-        EmailMessage=(EditText) root.findViewById(R.id.aboutEmailMessage);
+        EmailSubject = (EditText) root.findViewById(R.id.aboutEmailSubject);
+        EmailMessage = (EditText) root.findViewById(R.id.aboutEmailMessage);
 
         Button sendButton = (Button) root.findViewById(R.id.aboutEMailSend);
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -43,24 +43,22 @@ public class AboutFragment extends Fragment {
         return root;
     }
 
-    private void sendMail()
-    {
+    private void sendMail() {
         String subject = EmailSubject.getText().toString();
         String message = EmailMessage.getText().toString();
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{"programmingisgreatooo@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT,subject);
-        intent.putExtra(Intent.EXTRA_TEXT,message);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"programmingisgreatooo@gmail.com"});
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
 
         intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent,"Выберите приложение Email"));
+        startActivity(Intent.createChooser(intent, "Выберите приложение Email"));
 
     }
 
     @SuppressLint("SetTextI18n")
-    private void setAbout()
-    {
+    private void setAbout() {
         about.setText("Приветствуем Вас в нашем приложении \n " +
                 "Оно представляет из себя калькулятор с некоторыми прочими приколюхами\n" +
                 "Список фич:\n" +

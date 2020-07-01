@@ -2,396 +2,380 @@
 
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/graphFragTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/GraphTitle"
+            android:textColor="@color/colorDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/graph"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <TextView
+            android:id="@+id/graphInputTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/graphInputTitle"
+            android:textColor="@color/colorDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/graphFragTitle"
+            <Button
+                android:id="@+id/graphBPaint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/GraphTitle"
-                android:textColor="@color/colorDark"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:background="@drawable/buttons"
+                android:text="@string/graphDraw"
+                tools:ignore="ButtonStyle" />
 
-            <com.jjoe64.graphview.GraphView
-                android:id="@+id/graph"
-                android:layout_width="match_parent"
-                android:layout_height="300dp" />
-
-            <TextView
-                android:id="@+id/graphInputTitle"
+            <Button
+                android:id="@+id/graphBClear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/graphInputTitle"
-                android:textColor="@color/colorDark"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/graphBPaint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/buttons"
-                    android:text="@string/graphDraw"
-                    tools:ignore="ButtonStyle" />
-
-                <Button
-                    android:id="@+id/graphBClear"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/buttons"
-                    android:text="@string/graphClear"
-                    tools:ignore="ButtonStyle" />
-
-            </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:isScrollContainer="true"
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
-
-
-                <TextView
-                    android:id="@+id/graphInput"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="4"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/graphBC"
-                    app:layout_constraintBottom_toTopOf="@id/graphBLn"/>
-
-                <Button
-                    android:id="@+id/graphBC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphInput"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/graphBX"
-                    android:text="@string/delete"
-                    />
-
-
-
-                <Button
-                    android:id="@+id/graphBLn"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/graphInput"
-                    app:layout_constraintRight_toLeftOf="@id/graphBPow"
-                    app:layout_constraintBottom_toTopOf="@id/graphBTan"
-                    android:text="@string/tg_x"
-                    />
-                <Button
-                    android:id="@+id/graphBPow"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBLn"
-                    app:layout_constraintTop_toBottomOf="@id/graphInput"
-                    app:layout_constraintRight_toLeftOf="@id/graphBBracketOpen"
-                    app:layout_constraintBottom_toTopOf="@id/graphB7"
-                    android:text="@string/pow"
-                    />
-                <Button
-                    android:id="@+id/graphBBracketOpen"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBPow"
-                    app:layout_constraintTop_toBottomOf="@id/graphInput"
-                    app:layout_constraintRight_toLeftOf="@id/graphBBracketClose"
-                    app:layout_constraintBottom_toTopOf="@id/graphB8"
-                    android:text="@string/bracket_open"
-                    />
-                <Button
-                    android:id="@+id/graphBBracketClose"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBBracketOpen"
-                    app:layout_constraintTop_toBottomOf="@id/graphInput"
-                    app:layout_constraintRight_toLeftOf="@id/graphBX"
-                    app:layout_constraintBottom_toTopOf="@id/graphB9"
-                    android:text="@string/bracket_close"
-                    />
-                <Button
-                    android:id="@+id/graphBX"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBBracketClose"
-                    app:layout_constraintTop_toBottomOf="@id/graphBC"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/graphBDivision"
-                    android:text="@string/variableX"
-                    />
-
-
-
-                <Button
-                    android:id="@+id/graphBTan"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/graphBLn"
-                    app:layout_constraintRight_toLeftOf="@id/graphB7"
-                    app:layout_constraintBottom_toTopOf="@id/graphBCos"
-                    android:text="@string/tg_x"
-                    />
-                <Button
-                    android:id="@+id/graphB7"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBTan"
-                    app:layout_constraintTop_toBottomOf="@id/graphBPow"
-                    app:layout_constraintRight_toLeftOf="@id/graphB8"
-                    app:layout_constraintBottom_toTopOf="@id/graphB4"
-                    android:text="@string/_7"
-                    />
-                <Button
-                    android:id="@+id/graphB8"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB7"
-                    app:layout_constraintTop_toBottomOf="@id/graphBBracketOpen"
-                    app:layout_constraintRight_toLeftOf="@id/graphB9"
-                    app:layout_constraintBottom_toTopOf="@id/graphB5"
-                    android:text="@string/_8"
-                    />
-                <Button
-                    android:id="@+id/graphB9"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB8"
-                    app:layout_constraintTop_toBottomOf="@id/graphBBracketClose"
-                    app:layout_constraintRight_toLeftOf="@id/graphBDivision"
-                    app:layout_constraintBottom_toTopOf="@id/graphB6"
-                    android:text="@string/_9"
-                    />
-                <Button
-                    android:id="@+id/graphBDivision"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB9"
-                    app:layout_constraintTop_toBottomOf="@id/graphBX"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/graphBMulti"
-                    android:text="@string/division"
-                    />
-
-
-
-
-                <Button
-                    android:id="@+id/graphBCos"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/graphBTan"
-                    app:layout_constraintRight_toLeftOf="@id/graphB4"
-                    app:layout_constraintBottom_toTopOf="@id/graphBSin"
-                    android:text="@string/cos_x"
-                    />
-                <Button
-                    android:id="@+id/graphB4"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBCos"
-                    app:layout_constraintTop_toBottomOf="@id/graphB7"
-                    app:layout_constraintRight_toLeftOf="@id/graphB5"
-                    app:layout_constraintBottom_toTopOf="@id/graphB1"
-                    android:text="@string/_4"
-                    />
-                <Button
-                    android:id="@+id/graphB5"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB4"
-                    app:layout_constraintTop_toBottomOf="@id/graphB8"
-                    app:layout_constraintRight_toLeftOf="@id/graphB6"
-                    app:layout_constraintBottom_toTopOf="@id/graphB2"
-                    android:text="@string/_5"
-                    />
-                <Button
-                    android:id="@+id/graphB6"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB5"
-                    app:layout_constraintTop_toBottomOf="@id/graphB9"
-                    app:layout_constraintRight_toLeftOf="@id/graphBMulti"
-                    app:layout_constraintBottom_toTopOf="@id/graphB3"
-                    android:text="@string/_6"
-                    />
-                <Button
-                    android:id="@+id/graphBMulti"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB6"
-                    app:layout_constraintTop_toBottomOf="@id/graphBDivision"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/graphBMinus"
-                    android:text="@string/multi"
-                    />
-
-
-
-
-                <Button
-                    android:id="@+id/graphBSin"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/graphBCos"
-                    app:layout_constraintRight_toLeftOf="@id/graphB1"
-                    app:layout_constraintBottom_toTopOf="@id/graphBExp"
-                    android:text="@string/sin_x"
-                    />
-                <Button
-                    android:id="@+id/graphB1"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBSin"
-                    app:layout_constraintTop_toBottomOf="@id/graphB4"
-                    app:layout_constraintRight_toLeftOf="@id/graphB2"
-                    app:layout_constraintBottom_toTopOf="@id/graphBPi"
-                    android:text="@string/_1"
-                    />
-                <Button
-                    android:id="@+id/graphB2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB1"
-                    app:layout_constraintTop_toBottomOf="@id/graphB5"
-                    app:layout_constraintRight_toLeftOf="@id/graphB3"
-                    app:layout_constraintBottom_toTopOf="@id/graphB0"
-                    android:text="@string/_2"
-                    />
-                <Button
-                    android:id="@+id/graphB3"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB2"
-                    app:layout_constraintTop_toBottomOf="@id/graphB6"
-                    app:layout_constraintRight_toLeftOf="@id/graphBMinus"
-                    app:layout_constraintBottom_toTopOf="@id/graphBPoint"
-                    android:text="@string/_3"
-                    />
-                <Button
-                    android:id="@+id/graphBMinus"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB3"
-                    app:layout_constraintTop_toBottomOf="@id/graphBMulti"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/graphBSum"
-                    android:text="@string/minus"
-                    />
-
-
-
-                <Button
-                    android:id="@+id/graphBExp"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/graphBSin"
-                    app:layout_constraintRight_toLeftOf="@id/graphBPi"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="@string/e_x"
-                    />
-                <Button
-                    android:id="@+id/graphBPi"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBExp"
-                    app:layout_constraintTop_toBottomOf="@id/graphB1"
-                    app:layout_constraintRight_toLeftOf="@id/graphB0"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="@string/pi"
-                    />
-                <Button
-                    android:id="@+id/graphB0"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBPi"
-                    app:layout_constraintTop_toBottomOf="@id/graphB2"
-                    app:layout_constraintRight_toLeftOf="@id/graphBPoint"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="@string/_0"
-                    />
-                <Button
-                    android:id="@+id/graphBPoint"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphB0"
-                    app:layout_constraintTop_toBottomOf="@id/graphB3"
-                    app:layout_constraintRight_toLeftOf="@id/graphBSum"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="@string/point"
-                    />
-                <Button
-                    android:id="@+id/graphBSum"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="@drawable/graph_buttons"
-                    app:layout_constraintLeft_toRightOf="@id/graphBPoint"
-                    app:layout_constraintTop_toBottomOf="@id/graphBMinus"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:text="@string/sum"
-                    />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+                android:layout_weight="1"
+                android:background="@drawable/buttons"
+                android:text="@string/graphClear"
+                tools:ignore="ButtonStyle" />
 
         </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:isScrollContainer="true">
 
 
-    </androidx.core.widget.NestedScrollView>
+            <TextView
+                android:id="@+id/graphInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:background="@drawable/graph_buttons"
+                app:layout_constraintBottom_toTopOf="@id/graphBLn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/graphBC"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/graphBC"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/delete"
+                app:layout_constraintBottom_toTopOf="@id/graphBX"
+                app:layout_constraintLeft_toRightOf="@id/graphInput"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <Button
+                android:id="@+id/graphBLn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/tg_x"
+                app:layout_constraintBottom_toTopOf="@id/graphBTan"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/graphBPow"
+                app:layout_constraintTop_toBottomOf="@id/graphInput" />
+
+            <Button
+                android:id="@+id/graphBPow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/pow"
+                app:layout_constraintBottom_toTopOf="@id/graphB7"
+                app:layout_constraintLeft_toRightOf="@id/graphBLn"
+                app:layout_constraintRight_toLeftOf="@id/graphBBracketOpen"
+                app:layout_constraintTop_toBottomOf="@id/graphInput" />
+
+            <Button
+                android:id="@+id/graphBBracketOpen"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/bracket_open"
+                app:layout_constraintBottom_toTopOf="@id/graphB8"
+                app:layout_constraintLeft_toRightOf="@id/graphBPow"
+                app:layout_constraintRight_toLeftOf="@id/graphBBracketClose"
+                app:layout_constraintTop_toBottomOf="@id/graphInput" />
+
+            <Button
+                android:id="@+id/graphBBracketClose"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/bracket_close"
+                app:layout_constraintBottom_toTopOf="@id/graphB9"
+                app:layout_constraintLeft_toRightOf="@id/graphBBracketOpen"
+                app:layout_constraintRight_toLeftOf="@id/graphBX"
+                app:layout_constraintTop_toBottomOf="@id/graphInput" />
+
+            <Button
+                android:id="@+id/graphBX"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/variableX"
+                app:layout_constraintBottom_toTopOf="@id/graphBDivision"
+                app:layout_constraintLeft_toRightOf="@id/graphBBracketClose"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/graphBC" />
+
+
+            <Button
+                android:id="@+id/graphBTan"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/tg_x"
+                app:layout_constraintBottom_toTopOf="@id/graphBCos"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/graphB7"
+                app:layout_constraintTop_toBottomOf="@id/graphBLn" />
+
+            <Button
+                android:id="@+id/graphB7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_7"
+                app:layout_constraintBottom_toTopOf="@id/graphB4"
+                app:layout_constraintLeft_toRightOf="@id/graphBTan"
+                app:layout_constraintRight_toLeftOf="@id/graphB8"
+                app:layout_constraintTop_toBottomOf="@id/graphBPow" />
+
+            <Button
+                android:id="@+id/graphB8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_8"
+                app:layout_constraintBottom_toTopOf="@id/graphB5"
+                app:layout_constraintLeft_toRightOf="@id/graphB7"
+                app:layout_constraintRight_toLeftOf="@id/graphB9"
+                app:layout_constraintTop_toBottomOf="@id/graphBBracketOpen" />
+
+            <Button
+                android:id="@+id/graphB9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_9"
+                app:layout_constraintBottom_toTopOf="@id/graphB6"
+                app:layout_constraintLeft_toRightOf="@id/graphB8"
+                app:layout_constraintRight_toLeftOf="@id/graphBDivision"
+                app:layout_constraintTop_toBottomOf="@id/graphBBracketClose" />
+
+            <Button
+                android:id="@+id/graphBDivision"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/division"
+                app:layout_constraintBottom_toTopOf="@id/graphBMulti"
+                app:layout_constraintLeft_toRightOf="@id/graphB9"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/graphBX" />
+
+
+            <Button
+                android:id="@+id/graphBCos"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/cos_x"
+                app:layout_constraintBottom_toTopOf="@id/graphBSin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/graphB4"
+                app:layout_constraintTop_toBottomOf="@id/graphBTan" />
+
+            <Button
+                android:id="@+id/graphB4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_4"
+                app:layout_constraintBottom_toTopOf="@id/graphB1"
+                app:layout_constraintLeft_toRightOf="@id/graphBCos"
+                app:layout_constraintRight_toLeftOf="@id/graphB5"
+                app:layout_constraintTop_toBottomOf="@id/graphB7" />
+
+            <Button
+                android:id="@+id/graphB5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_5"
+                app:layout_constraintBottom_toTopOf="@id/graphB2"
+                app:layout_constraintLeft_toRightOf="@id/graphB4"
+                app:layout_constraintRight_toLeftOf="@id/graphB6"
+                app:layout_constraintTop_toBottomOf="@id/graphB8" />
+
+            <Button
+                android:id="@+id/graphB6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_6"
+                app:layout_constraintBottom_toTopOf="@id/graphB3"
+                app:layout_constraintLeft_toRightOf="@id/graphB5"
+                app:layout_constraintRight_toLeftOf="@id/graphBMulti"
+                app:layout_constraintTop_toBottomOf="@id/graphB9" />
+
+            <Button
+                android:id="@+id/graphBMulti"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/multi"
+                app:layout_constraintBottom_toTopOf="@id/graphBMinus"
+                app:layout_constraintLeft_toRightOf="@id/graphB6"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/graphBDivision" />
+
+
+            <Button
+                android:id="@+id/graphBSin"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/sin_x"
+                app:layout_constraintBottom_toTopOf="@id/graphBExp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/graphB1"
+                app:layout_constraintTop_toBottomOf="@id/graphBCos" />
+
+            <Button
+                android:id="@+id/graphB1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_1"
+                app:layout_constraintBottom_toTopOf="@id/graphBPi"
+                app:layout_constraintLeft_toRightOf="@id/graphBSin"
+                app:layout_constraintRight_toLeftOf="@id/graphB2"
+                app:layout_constraintTop_toBottomOf="@id/graphB4" />
+
+            <Button
+                android:id="@+id/graphB2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_2"
+                app:layout_constraintBottom_toTopOf="@id/graphB0"
+                app:layout_constraintLeft_toRightOf="@id/graphB1"
+                app:layout_constraintRight_toLeftOf="@id/graphB3"
+                app:layout_constraintTop_toBottomOf="@id/graphB5" />
+
+            <Button
+                android:id="@+id/graphB3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_3"
+                app:layout_constraintBottom_toTopOf="@id/graphBPoint"
+                app:layout_constraintLeft_toRightOf="@id/graphB2"
+                app:layout_constraintRight_toLeftOf="@id/graphBMinus"
+                app:layout_constraintTop_toBottomOf="@id/graphB6" />
+
+            <Button
+                android:id="@+id/graphBMinus"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/minus"
+                app:layout_constraintBottom_toTopOf="@id/graphBSum"
+                app:layout_constraintLeft_toRightOf="@id/graphB3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/graphBMulti" />
+
+
+            <Button
+                android:id="@+id/graphBExp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/e_x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/graphBPi"
+                app:layout_constraintTop_toBottomOf="@id/graphBSin" />
+
+            <Button
+                android:id="@+id/graphBPi"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/pi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/graphBExp"
+                app:layout_constraintRight_toLeftOf="@id/graphB0"
+                app:layout_constraintTop_toBottomOf="@id/graphB1" />
+
+            <Button
+                android:id="@+id/graphB0"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/_0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/graphBPi"
+                app:layout_constraintRight_toLeftOf="@id/graphBPoint"
+                app:layout_constraintTop_toBottomOf="@id/graphB2" />
+
+            <Button
+                android:id="@+id/graphBPoint"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/point"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/graphB0"
+                app:layout_constraintRight_toLeftOf="@id/graphBSum"
+                app:layout_constraintTop_toBottomOf="@id/graphB3" />
+
+            <Button
+                android:id="@+id/graphBSum"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/graph_buttons"
+                android:text="@string/sum"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/graphBPoint"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/graphBMinus" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
 
 

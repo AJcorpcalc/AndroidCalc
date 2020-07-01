@@ -20,10 +20,10 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 
 public class GraphFragment extends Fragment {
-    private ParserCalc parser=new ParserCalc();
-    private static int i=0;
-    private static boolean start=false;
-    private static String lastNumber="", lastCommand="";
+    private ParserCalc parser = new ParserCalc();
+    private static int i = 0;
+    private static boolean start = false;
+    private static String lastNumber = "", lastCommand = "";
     private static TextView graphText;
     private static GraphView graph;
     private static double counter;
@@ -37,8 +37,8 @@ public class GraphFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_graph, container, false);
 
-         graph =  root.findViewById(R.id.graph);
-         graphText = root.findViewById(R.id.graphInput);
+        graph = root.findViewById(R.id.graph);
+        graphText = root.findViewById(R.id.graphInput);
 
 
         View.OnClickListener btn0 = new View.OnClickListener() {
@@ -52,99 +52,99 @@ public class GraphFragment extends Fragment {
 
                 switch (v.getId()) {
                     case R.id.graphBX:
-                        if (lastCommand != ")"&&lastNumber =="") {
+                        if (lastCommand != ")" && lastNumber == "") {
                             start = true;
                             lastCommand = "";
-                            lastNumber="X";
+                            lastNumber = "X";
                             graphText.setText(graphText.getText() + "X");
                         }
                         break;
                     case R.id.graphB0:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
                             lastCommand = "";
-                            lastNumber+="0";
+                            lastNumber += "0";
                             graphText.setText(graphText.getText() + "0");
                         }
                         break;
                     case R.id.graphB1:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "1");
                         }
                         break;
                     case R.id.graphB2:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "2");
                         }
                         break;
                     case R.id.graphB3:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "3");
                         }
                         break;
                     case R.id.graphB4:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "4");
                         }
                         break;
                     case R.id.graphB5:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "5");
                         }
                         break;
                     case R.id.graphB6:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "6");
                         }
                         break;
                     case R.id.graphB7:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "7");
                         }
                         break;
                     case R.id.graphB8:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "8");
                         }
                         break;
                     case R.id.graphB9:
-                        if (lastCommand != ")"&&lastNumber !="X") {
+                        if (lastCommand != ")" && lastNumber != "X") {
                             start = true;
-                            lastNumber+="0";
+                            lastNumber += "0";
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "9");
                         }
                         break;
                     case R.id.graphBPi:
-                        if (lastCommand != ")"&&lastNumber=="") {
+                        if (lastCommand != ")" && lastNumber == "") {
                             start = true;
                             lastCommand = "";
                             graphText.setText(graphText.getText() + "p");
-                            lastNumber+="p";
+                            lastNumber += "p";
                         }
                         break;
                     case R.id.graphBMinus:
@@ -177,7 +177,7 @@ public class GraphFragment extends Fragment {
                         }
                         break;
                     case R.id.graphBPoint:
-                        if (!lastNumber.contains(".")&&lastNumber!="pi"&&lastNumber !="X" && start && lastCommand == "") {
+                        if (!lastNumber.contains(".") && lastNumber != "pi" && lastNumber != "X" && start && lastCommand == "") {
                             graphText.setText(graphText.getText() + ".");
                             lastNumber += ".";
                             lastCommand = ".";
@@ -210,7 +210,8 @@ public class GraphFragment extends Fragment {
                         start = false;
                         lastNumber = "";
                         lastCommand = "";
-                    }break;
+                    }
+                    break;
 
                     case R.id.graphBSin: {
                         if (lastCommand != "." && (lastCommand != "" || !start) && lastCommand != ")" && lastCommand.length() <= 1) {
@@ -273,11 +274,10 @@ public class GraphFragment extends Fragment {
                         graph.removeAllSeries();
                         break;
                     case R.id.graphBPaint:
-                        if(i==0&&(lastCommand==""||lastCommand==")")){
+                        if (i == 0 && (lastCommand == "" || lastCommand == ")")) {
                             String s = graphText.getText().toString();
                             counter = xLeft;
-                            while(counter<xRight)
-                            {
+                            while (counter < xRight) {
                                 LineGraphSeries<DataPoint> Dots = formulaToDots(s);
                                 if (!Dots.isEmpty()) graph.addSeries(Dots);
                             }
@@ -296,16 +296,15 @@ public class GraphFragment extends Fragment {
                             start = false;
                             lastNumber = "";
                             lastCommand = "";
-                        }
-                        else if(i!=0) Toast.makeText(getActivity(),"Количество скобок не совпадает",Toast.LENGTH_SHORT).show();
-                        else Toast.makeText(getActivity(),"Введите выражение",Toast.LENGTH_SHORT).show();
+                        } else if (i != 0)
+                            Toast.makeText(getActivity(), "Количество скобок не совпадает", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(getActivity(), "Введите выражение", Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + v.getId());
                 }
             }
-
-
 
 
         };
@@ -340,21 +339,18 @@ public class GraphFragment extends Fragment {
         root.findViewById(R.id.graphBLn).setOnClickListener(btn0);
         return root;
     }
-    LineGraphSeries<DataPoint> formulaToDots(String str)
-    {
+
+    LineGraphSeries<DataPoint> formulaToDots(String str) {
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>();
 
-            for (;counter<=xRight;counter+=step)
-        {
-            String buf = str.replace("X","("+String.valueOf(counter)+")");
+        for (; counter <= xRight; counter += step) {
+            String buf = str.replace("X", "(" + String.valueOf(counter) + ")");
             double y = Double.parseDouble(parser.start(buf));
-            Log.d("graph",String.valueOf(counter)+"__"+y);
-            if (Math.abs(y)>fixed)
-            {
-               counter+=step;
+            if (Math.abs(y) > fixed) {
+                counter += step;
                 return series;
             }
-            series.appendData(new DataPoint(counter,y),true,(int)((xRight-xLeft)/step+1));
+            series.appendData(new DataPoint(counter, y), true, (int) ((xRight - xLeft) / step + 1));
 
         }
 
