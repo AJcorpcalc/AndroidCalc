@@ -1,4 +1,4 @@
-# AndroidCalc
+# AndroidCalc v0.6
 ![main icon](https://github.com/AJcorpcalc/AndroidCalc/blob/master/Calculator_v_0.6/app/src/main/main_icon-web.png)
 
 Приветствуем Вас в нашем приложении
@@ -17,6 +17,14 @@ _4. Заметки - можете записать сюда формулы, по
 
 Если возникли вопросы, предложения и рецензии, можете написать нам на почту:
 
-**programmingisgreatooo@gmail.com**
+**<programmingisgreatooo@gmail.com>**
 
 Спасибо:)
+
+_Гринкевич Александр, Корепина Юлия_
+
+_2020г_
+
+
+ __P.S. Приложение находится в процессе разработки__
+
